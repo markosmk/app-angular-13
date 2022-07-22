@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.link {
+  @apply px-4 py-2 hover:bg-slate-100 rounded-md cursor-pointer transition-colors;
+}
+
+.active {
+  @apply italic bg-cyan-600 text-white hover:text-white hover:bg-cyan-600;
+}
