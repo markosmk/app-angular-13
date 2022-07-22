@@ -1,0 +1,21 @@
+<div *ngIf="!country; else divCountry">
+  <div>Wait.. loading..</div>
+</div>
+
+<ng-template #divCountry>
+  <h1>Country: {{ country.name.official }}</h1>
+  <img
+    src="{{ country.flags.svg }}"
+    alt="{{ country.name.official }}"
+    class="w-52"
+  />
+
+  <p>Poblation: {{ country.population | number }}</p>
+
+  <h3>Traductions:</h3>
+  <p>
+    {{ country.translations["ces"].official }},
+    {{ country.translations["est"].official }},
+    {{ country.translations["hrv"].official }},
+  </p>
+</ng-template>

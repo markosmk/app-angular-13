@@ -1,0 +1,16 @@
+<h3 class="text-xl pb-3 text-slate-700 font-bold">By Region</h3>
+<hr />
+
+<div class="w-full my-3">
+  <app-country-input
+    (onEnter)="search($event)"
+    (onDebounce)="suggestions($event)"
+    placeholder="Search Region..."
+  ></app-country-input>
+</div>
+
+<div *ngIf="hasError" class="mb-3 bg-red-200 text-red-800 rounded-md p-3">
+  :( No results found for {{ terms }}
+</div>
+
+<app-country-table [countries]="listCountries"></app-country-table>
